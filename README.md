@@ -1,2 +1,2 @@
-# HomeAutomationSystem
-Home Automation System
+# HomeAutomationSystemClient
+Home Automation System Client
