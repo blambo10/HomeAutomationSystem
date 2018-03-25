@@ -69,6 +69,7 @@ class Network:
                 #send data back to feed handler
                 #to operate appropriate logic dependant pon payload
                 feedhandler.powercontroler(data.decode('utf-8'))
+                print(data)
 
             return True
         except:

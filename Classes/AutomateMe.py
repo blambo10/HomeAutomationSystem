@@ -56,6 +56,6 @@ class AutomateMe:
     def powercontroler(self, command):
         if str(command) == "reboot":
             os.system(self.CONST_REBOOTCOMMAND)
-        elif str(command) == "shutdown:":
+        elif str(command) == "shutdown":
             os.system(self.CONST_SHUTDOWNCOMMAND)
 
