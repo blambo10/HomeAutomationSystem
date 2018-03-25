@@ -53,6 +53,7 @@ class Network:
         try:
             print("Listening on :" + self.listeningip + ":" + self.listeningport)
             print("OS :" + platform.system())
+
             #Creating Socket for Windows
             #binding to socket
             #listening on socket
@@ -68,7 +69,6 @@ class Network:
                 #send data back to feed handler
                 #to operate appropriate logic dependant pon payload
                 feedhandler.powercontroler(data.decode('utf-8'))
-                #print(data)
 
             return True
         except:
