@@ -51,8 +51,8 @@ class Network:
     #Lets Get this party started
     def startsocketlistener(self, feedhandler):
         try:
-            print("Listening on :" + self.listeningip + ":" + self.listeningport)
-            print("OS :" + platform.system())
+            print("Listening on: " + self.listeningip + ":" + self.listeningport)
+            print("OS: " + platform.system())
 
             #Creating Socket for Windows
             #binding to socket

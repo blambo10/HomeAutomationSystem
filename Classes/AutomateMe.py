@@ -9,7 +9,6 @@ class AutomateMe:
         #Defining "Constants" if you can call a mutable variable that ... sigh.
         CONST_CONFIG = "hasagent.config"
         CONST_OS = platform.system()
-        print(CONST_OS)
 
         #Defining control commands
         if CONST_OS == "Windows":
@@ -18,9 +17,9 @@ class AutomateMe:
         elif CONST_OS == "Linux":
             self.CONST_REBOOTCOMMAND = "sync;shutdown -r now"
             self.CONST_SHUTDOWNCOMMAND = "sync;shutdown -h now"
-
-        #else:
-        #    print("Operating Not Supported!")
+        else:
+            print("Operating Not Supported!")
+            exit(2)
 
         #Loading Config Parameters from external config file.
         self.config = configparser.ConfigParser()
@@ -35,8 +34,8 @@ class AutomateMe:
             #Parsing in config file
             self.config.read(configfile)
 
-            for key in self.config["NETWORK"]:
-                print(key + " : " + self.config["NETWORK"][key])
+            #for key in self.config["NETWORK"]:
+                #print(key + " : " + self.config["NETWORK"][key])
 
             if self.config["NETWORK"]["SocketIP"]:
                 ip = self.config["NETWORK"]["SocketIP"]
@@ -51,7 +50,7 @@ class AutomateMe:
             return "",""
 
     def startagent(self):
-        print(self.Listener.listeningip + " : " + self.Listener.listeningport)
+        #print(self.Listener.listeningip + " : " + self.Listener.listeningport)
         self.Listener.startsocketlistener(self)
 
     def powercontroler(self, command):
