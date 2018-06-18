@@ -23,7 +23,7 @@ class Network:
             #print(self.listeningip)
             #exit(2)
         else:
-            #TODO (ADD THE LOGIC TO OBTAIN THE NIC HERE)
+            #TODO (ADD THE LOGIC TO OBTAIN THE NIC HERE) Needs work as it resolves the ohstname to find the IP
             self.listeningip = socket.gethostbyname(socket.gethostname())
 
             if self.listeningip:
