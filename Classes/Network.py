@@ -16,7 +16,12 @@ class Network:
     def __init__(self, IP, Port):
         self.__listeningIP = None
         self.__listeningPort = None
-        self.listeningip = IP
+        if IP != 0:
+            self.listeningip = IP
+        else:
+            #TODO (ADD THE LOGIC TO OBTAIN THE NIC HERE)
+            self.listeningip = socket.gethostbyname(socket.gethostname())
+
         self.listeningport = Port
 
     # Validation Methods

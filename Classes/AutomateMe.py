@@ -32,20 +32,23 @@ class AutomateMe:
     def loadconfig(self, configfile):
         try:
             #Parsing in config file
-            self.config.read(configfile)
+            if self.config.read(configfile):
 
-            #for key in self.config["NETWORK"]:
-                #print(key + " : " + self.config["NETWORK"][key])
+                #for key in self.config["NETWORK"]:
+                    #print(key + " : " + self.config["NETWORK"][key])
 
-            if self.config["NETWORK"]["SocketIP"]:
-                ip = self.config["NETWORK"]["SocketIP"]
+                if self.config["NETWORK"]["SocketIP"]:
+                    ip = self.config["NETWORK"]["SocketIP"]
 
-            if self.config["NETWORK"]["SocketPort"]:
-                port = self.config["NETWORK"]["SocketPort"]
+                if self.config["NETWORK"]["SocketPort"]:
+                    port = self.config["NETWORK"]["SocketPort"]
 
-            #Returning IP and Port extracted from config file
-            #in tuple
-            return ip, port
+                #Returning IP and Port extracted from config file
+                #in tuple
+                return ip, port
+            else:
+                ip = 0
+                port = 6060
         except:
             return "",""
 
