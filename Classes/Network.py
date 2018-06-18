@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import platform
 import socket
 import ipaddress
