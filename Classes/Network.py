@@ -16,11 +16,22 @@ class Network:
     def __init__(self, IP, Port):
         self.__listeningIP = None
         self.__listeningPort = None
-        if IP != 0:
+        if IP is not False:
             self.listeningip = IP
+            #print("is not 1")
+            #print(self.listeningip)
+            #exit(2)
         else:
             #TODO (ADD THE LOGIC TO OBTAIN THE NIC HERE)
             self.listeningip = socket.gethostbyname(socket.gethostname())
+
+            if self.listeningip:
+                print("Set ip")
+                #exit(2)
+            else:
+                print(self.listeningip)
+                #exit(2)
+
 
         self.listeningport = Port
 
@@ -56,7 +67,7 @@ class Network:
     #Lets Get this party started
     def startsocketlistener(self, feedhandler):
         try:
-            print("Listening on: " + self.listeningip + ":" + self.listeningport)
+            print("Listening on: " + (str)(self.listeningip) + ":" + (str)(self.listeningport))
             print("OS: " + platform.system())
 
             #Creating Socket for Windows
