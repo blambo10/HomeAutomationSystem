@@ -19,20 +19,10 @@ class Network:
         self.__listeningPort = None
         if IP is not False:
             self.listeningip = IP
-            #print("is not 1")
-            #print(self.listeningip)
-            #exit(2)
         else:
             #TODO (ADD THE LOGIC TO OBTAIN THE NIC HERE) Needs work as it resolves the ohstname to find the IP
-            self.listeningip = socket.gethostbyname(socket.gethostname())
-
-            if self.listeningip:
-                print("Set ip")
-                #exit(2)
-            else:
-                print(self.listeningip)
-                #exit(2)
-
+            print("No IP Found")
+            exit("2")
 
         self.listeningport = Port
 

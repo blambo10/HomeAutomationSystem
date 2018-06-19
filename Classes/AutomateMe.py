@@ -8,7 +8,7 @@ class AutomateMe:
 
     def __init__(self):
         #Defining "Constants" if you can call a mutable variable that ... sigh.
-        CONST_CONFIG = "hasagent.configa"
+        CONST_CONFIG = "hasagent.config"
         CONST_OS = platform.system()
 
         #Defining control commands
@@ -48,9 +48,8 @@ class AutomateMe:
                 #in tuple
                 return ip, port
             else:
-                ip = False
-                port = 6060
-                return ip, port
+                print("Cannot locate hasagent.config quitting")
+                exit(2)
         except:
             return "",""
 
